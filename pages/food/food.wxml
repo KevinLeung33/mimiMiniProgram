@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="intro">
+    <view class="eyebrow">可复用的食物资料</view>
+    <view class="title">湿粮库</view>
+    <view class="description">录入一次，日常记录时用下拉标签直接选择。</view>
+  </view>
+
+  <view class="card form-card">
+    <view class="section-title">新增一种湿粮</view>
+    <view class="field-label">品牌</view>
+    <input class="input-field" placeholder="例如：品牌名称" value="{{brand}}" data-field="brand" bindinput="onInput" />
+    <view class="field-label">口味 / 主食材</view>
+    <input class="input-field" placeholder="例如：鸡肉南瓜" value="{{flavor}}" data-field="flavor" bindinput="onInput" />
+    <view class="field-label">湿粮类型</view>
+    <picker mode="selector" range="{{foodTypes}}" value="{{typeIndex}}" bindchange="onTypeChange"><view class="picker-field">{{selectedType}} <text>⌄</text></view></picker>
+    <view class="field-label">常用分量</view>
+    <picker mode="selector" range="{{portions}}" value="{{portionIndex}}" bindchange="onPortionChange"><view class="picker-field">{{selectedPortion}} <text>⌄</text></view></picker>
+    <view class="field-label">使用状态</view>
+    <picker mode="selector" range="{{stockStatuses}}" value="{{stockStatusIndex}}" bindchange="onStatusChange"><view class="picker-field">{{selectedStockStatus}} <text>⌄</text></view></picker>
+    <view class="primary-button add-button" bindtap="addFood">加入湿粮库</view>
+  </view>
+
+  <view class="library-heading"><view class="section-title">已有 {{foodLibrary.length}} 种湿粮</view><view class="section-hint">状态可在以后加入编辑功能。</view></view>
+  <view class="food-list">
+    <view class="food-item" wx:for="{{foodLibrary}}" wx:key="id">
+      <view class="food-dot">🥣</view>
+      <view class="food-copy"><view class="food-name">{{item.displayName}}</view><view class="food-detail">{{item.detail}}</view></view>
+      <view class="status-pill">{{item.stockStatus}}</view>
+    </view>
+  </view>
+</view>

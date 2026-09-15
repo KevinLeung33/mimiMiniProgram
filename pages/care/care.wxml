@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="intro">
+    <view class="eyebrow">提醒由你自己配置</view>
+    <view class="title">护理提醒</view>
+    <view class="description">这里的周期只是 Demo 示例；请按你的实际安排、产品说明或兽医建议调整。</view>
+  </view>
+
+  <view class="task-list">
+    <view class="card task-card" wx:for="{{tasks}}" wx:key="id">
+      <view class="task-header">
+        <view class="task-name"><text>{{item.icon}}</text> {{item.name}}</view>
+        <view class="task-status">{{item.status}}</view>
+      </view>
+      <view class="task-divider"></view>
+      <view class="interval-row">
+        <view>
+          <view class="interval-label">提醒周期</view>
+          <view class="interval-hint">完成后按这个天数计算下一次待办</view>
+        </view>
+        <view class="stepper">
+          <view class="step-button" data-id="{{item.id}}" data-delta="-1" bindtap="changeInterval">−</view>
+          <view class="interval-number">{{item.intervalDays}} 天</view>
+          <view class="step-button" data-id="{{item.id}}" data-delta="1" bindtap="changeInterval">＋</view>
+        </view>
+      </view>
+      <view class="complete-button" data-id="{{item.id}}" bindtap="completeTask">记录这次已完成</view>
+    </view>
+  </view>
+</view>

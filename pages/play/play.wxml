@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="intro">
+    <view class="eyebrow">已收藏 {{memoryCount}} 条小剧场回忆</view>
+    <view class="title">今天想去哪里找它？</view>
+    <view class="description">逐个地点找找它；找到后互动，看看它愿不愿意留下，还是跑去别处。</view>
+  </view>
+
+  <view class="scene-switcher">
+    <view
+      wx:for="{{scenes}}"
+      wx:key="id"
+      class="scene-chip {{index === currentSceneIndex ? 'selected' : ''}} {{isAnimating ? 'locked' : ''}}"
+      data-index="{{index}}"
+      bindtap="selectScene"
+    >
+      <view class="scene-chip-emoji">{{item.emoji}}</view>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class="room scene-{{currentScene.id}}">
+    <image class="room-image room-image-stable phase-{{transitionPhase}}" src="{{stableImageSrc}}" mode="aspectFill" />
+    <image wx:if="{{outgoingImageSrc}}" class="room-image room-image-outgoing phase-{{transitionPhase}}" src="{{outgoingImageSrc}}" mode="aspectFill" />
+    <view wx:if="{{transitionPhase === 'arriving'}}" class="transition-wash">🐾</view>
+    <view class="room-label">{{currentScene.emoji}} {{currentScene.name}}</view>
+    <view class="room-desc">{{currentScene.description}}</view>
+  </view>
+
+  <view class="scene-feedback-card {{catVisible ? 'cat-found' : 'cat-missing'}}">
+    <view class="feedback-label">猫咪小剧场</view>
+    <view class="feedback-text">{{sceneFeedback}}</view>
+  </view>
+
+  <view class="card action-card">
+    <view class="section-title">试试怎么互动</view>
+    <view class="action-grid">
+      <view
+        wx:for="{{currentScene.actions}}"
+        wx:key="label"
+        class="action-chip {{index === currentActionIndex ? 'active' : ''}} {{isAnimating ? 'locked' : ''}}"
+        data-index="{{index}}"
+        bindtap="selectAction"
+      >{{item.label}}</view>
+    </view>
+    <view wx:if="{{isAnimating}}" class="primary-button reaction-button disabled-button">猫咪正在行动…</view>
+    <view wx:elif="{{catState.visibility === 'hidden' && currentScene.id === catState.currentSceneId}}" class="primary-button reaction-button" bindtap="findCat">找找它</view>
+    <view wx:elif="{{catVisible}}" class="primary-button reaction-button" bindtap="playReaction">互动</view>
+    <view wx:else class="primary-button reaction-button disabled-button">这里没有猫咪</view>
+  </view>
+
+  <view class="ghost-button memory-button {{isAnimating ? 'locked' : ''}}" bindtap="saveMemory">收进小剧场回忆</view>
+</view>

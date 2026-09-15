@@ -1,0 +1,183 @@
+.hero {
+  align-items: center;
+  background: linear-gradient(135deg, #f8d7bd, #f7b784);
+  border-radius: 32rpx;
+  box-shadow: 0 16rpx 34rpx rgba(190, 107, 60, 0.16);
+  display: flex;
+  justify-content: space-between;
+  padding: 36rpx 32rpx;
+}
+
+.hero-copy {
+  width: 510rpx;
+}
+
+.eyebrow {
+  color: #8d5435;
+  font-size: 24rpx;
+}
+
+.hero-title {
+  color: #513321;
+  font-size: 44rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+}
+
+.hero-text {
+  color: #724932;
+  font-size: 25rpx;
+  line-height: 1.6;
+  margin-top: 12rpx;
+}
+
+.cat-bubble {
+  align-items: center;
+  background: rgba(255, 253, 249, 0.62);
+  border-radius: 50%;
+  display: flex;
+  font-size: 72rpx;
+  height: 118rpx;
+  justify-content: center;
+  width: 118rpx;
+}
+
+.quick-card {
+  margin-top: 28rpx;
+}
+
+.quick-button {
+  margin-top: 24rpx;
+}
+
+.section-row {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 4rpx 20rpx;
+}
+
+.link {
+  color: #c46a42;
+  font-size: 25rpx;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18rpx;
+}
+
+.stat-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx;
+  width: calc(50% - 9rpx);
+}
+
+.stat-emoji {
+  font-size: 36rpx;
+}
+
+.stat-number {
+  color: #ce6d42;
+  font-size: 48rpx;
+  font-weight: 800;
+  margin-top: 4rpx;
+}
+
+.stat-summary {
+  font-size: 25rpx;
+  margin-top: 10rpx;
+  white-space: nowrap;
+}
+
+.stat-label,
+.food-text {
+  color: #9d8978;
+  font-size: 24rpx;
+}
+
+.food-detail {
+  color: #b49e8d;
+  font-size: 22rpx;
+  margin-top: 6rpx;
+}
+
+.food-card {
+  width: 100%;
+}
+
+.food-title {
+  color: #5c4635;
+  font-size: 27rpx;
+  font-weight: 700;
+  margin-top: 8rpx;
+}
+
+.food-text {
+  margin-top: 8rpx;
+}
+
+.care-list {
+  background: #fffdf9;
+  border-radius: 28rpx;
+  box-shadow: 0 12rpx 30rpx rgba(125, 92, 64, 0.08);
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.care-item {
+  align-items: center;
+  border-bottom: 1rpx solid #f5e8de;
+  display: flex;
+  min-height: 112rpx;
+  padding: 0 24rpx;
+}
+
+.care-item:last-child {
+  border-bottom: none;
+}
+
+.care-icon {
+  font-size: 36rpx;
+  margin-right: 18rpx;
+}
+
+.care-copy {
+  flex: 1;
+}
+
+.care-name {
+  color: #5c4635;
+  font-size: 27rpx;
+  font-weight: 700;
+}
+
+.care-status {
+  color: #9d8978;
+  font-size: 22rpx;
+  margin-top: 6rpx;
+}
+
+.care-done {
+  background: #f9eadb;
+  border-radius: 999rpx;
+  color: #b76139;
+  font-size: 23rpx;
+  padding: 12rpx 20rpx;
+}
+
+.care-done.done {
+  background: #e3f1df;
+  color: #5c8e55;
+}
+
+.play-card {
+  margin-top: 28rpx;
+}
+
+.play-button {
+  margin-top: 22rpx;
+}

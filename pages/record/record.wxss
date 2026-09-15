@@ -1,0 +1,26 @@
+.intro { margin: 12rpx 8rpx 28rpx; }
+.eyebrow { color: #c46a42; font-size: 25rpx; }
+.title { color: #4f3829; font-size: 42rpx; font-weight: 800; margin-top: 10rpx; }
+.description { color: #9d8978; font-size: 25rpx; line-height: 1.6; margin-top: 10rpx; }
+.record-card { margin-top: 20rpx; }
+.litter-block { margin-top: 26rpx; }
+.stool-block { border-top: 1rpx solid #f3e7dc; margin-top: 30rpx; padding-top: 28rpx; }
+.litter-heading { color: #634936; font-size: 29rpx; font-weight: 800; }
+.size-grid { display: flex; gap: 14rpx; margin-top: 16rpx; }
+.size-card { border-radius: 18rpx; box-sizing: border-box; flex: 1; padding: 18rpx 10rpx; text-align: center; }
+.size-card.large { background: #e7f2fb; color: #4e7592; }
+.size-card.medium { background: #f0f5da; color: #72834b; }
+.size-card.small { background: #fce8d8; color: #a66744; }
+.size-name { font-size: 23rpx; font-weight: 700; }
+.size-count { font-size: 42rpx; font-weight: 800; line-height: 1.2; margin-top: 6rpx; }
+.size-add { font-size: 20rpx; margin-top: 4rpx; opacity: .78; }
+.undo-row { align-items: center; color: #aa9586; display: flex; font-size: 21rpx; gap: 14rpx; margin-top: 14rpx; }
+.undo-row view { background: #f7eee7; border-radius: 999rpx; color: #9b684c; padding: 7rpx 12rpx; }
+.food-header { align-items: center; display: flex; justify-content: space-between; }
+.food-library-link { color: #c46a42; font-size: 23rpx; }
+.field-label { color: #806a5a; font-size: 25rpx; margin-top: 24rpx; }
+.picker-field { background: #fff7ef; border-radius: 16rpx; box-sizing: border-box; color: #5c4635; font-size: 27rpx; margin-top: 12rpx; padding: 22rpx 20rpx; }
+.picker-field text { color: #bd7a58; float: right; }
+.food-meta { color: #aa9586; font-size: 22rpx; margin: 10rpx 4rpx 0; }
+.note { background: #fff7ef; border-radius: 16rpx; box-sizing: border-box; color: #5c4635; font-size: 27rpx; height: 160rpx; margin-top: 18rpx; padding: 20rpx; width: 100%; }
+.save-button { margin: 30rpx 0 8rpx; }

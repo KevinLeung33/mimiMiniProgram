@@ -1,0 +1,121 @@
+.intro {
+  margin: 12rpx 8rpx 26rpx;
+}
+
+.eyebrow {
+  color: #c46a42;
+  font-size: 24rpx;
+}
+
+.title {
+  color: #4f3829;
+  font-size: 42rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+}
+
+.description {
+  color: #9d8978;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.record-item,
+.empty-card {
+  background: #fffdf9;
+  border-radius: 24rpx;
+  box-shadow: 0 10rpx 24rpx rgba(125, 92, 64, 0.07);
+  padding: 25rpx;
+}
+
+.record-date {
+  color: #714b35;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.record-stats {
+  display: flex;
+  gap: 22rpx;
+  margin-top: 15rpx;
+}
+
+.record-stats text {
+  background: #fff3e9;
+  border-radius: 999rpx;
+  color: #8f634a;
+  font-size: 24rpx;
+  padding: 10rpx 16rpx;
+}
+
+.record-food {
+  color: #796152;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+
+.record-food-detail {
+  color: #b09a8a;
+  font-size: 22rpx;
+  margin-top: 5rpx;
+}
+
+.record-note {
+  color: #9d8978;
+  font-size: 25rpx;
+  line-height: 1.55;
+  margin-top: 14rpx;
+}
+
+.empty-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 70rpx 30rpx;
+}
+
+.empty-icon {
+  font-size: 64rpx;
+}
+
+.empty-title {
+  color: #684d3a;
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-top: 12rpx;
+}
+
+.empty-text {
+  color: #9d8978;
+  font-size: 25rpx;
+  margin-top: 8rpx;
+}
+
+.memory-section {
+  margin-top: 42rpx;
+}
+
+.memory-item {
+  background: #f9eee4;
+  border-radius: 18rpx;
+  margin-top: 14rpx;
+  padding: 20rpx;
+}
+
+.memory-time {
+  color: #ad7356;
+  font-size: 22rpx;
+}
+
+.memory-text {
+  color: #6e513e;
+  font-size: 25rpx;
+  line-height: 1.5;
+  margin-top: 7rpx;
+}

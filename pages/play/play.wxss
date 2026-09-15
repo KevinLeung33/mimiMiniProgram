@@ -1,0 +1,270 @@
+.intro {
+  margin: 12rpx 8rpx 24rpx;
+}
+
+.eyebrow {
+  color: #c46a42;
+  font-size: 25rpx;
+}
+
+.title {
+  color: #4f3829;
+  font-size: 42rpx;
+  font-weight: 800;
+  margin-top: 10rpx;
+}
+
+.description {
+  color: #9d8978;
+  font-size: 24rpx;
+  line-height: 1.55;
+  margin-top: 10rpx;
+}
+
+.scene-switcher {
+  display: flex;
+  gap: 14rpx;
+  margin-bottom: 20rpx;
+}
+
+.scene-chip {
+  align-items: center;
+  background: #fffdf9;
+  border-radius: 18rpx;
+  color: #907765;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 23rpx;
+  padding: 16rpx 8rpx;
+}
+
+.scene-chip.selected {
+  background: #f7d9c4;
+  color: #8d4d31;
+  font-weight: 700;
+}
+
+.scene-chip-emoji {
+  font-size: 34rpx;
+  margin-bottom: 4rpx;
+}
+
+.room {
+  background: #ead8c4;
+  border-radius: 30rpx;
+  box-shadow: inset 0 -60rpx 0 rgba(124, 81, 49, 0.08);
+  box-sizing: border-box;
+  height: 900rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.room.scene-underbed {
+  height: 520rpx;
+}
+
+.room-image {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.room-image-stable {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 0;
+}
+
+.room-image-outgoing {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.room-image-stable.phase-reaction,
+.room-image-stable.phase-arriving {
+  animation: scene-in 350ms ease-out both;
+}
+
+.room-image-outgoing.phase-reaction {
+  animation: reaction-out 300ms ease-out forwards;
+}
+
+.room-image-outgoing.phase-settling,
+.room-image-outgoing.phase-leaving,
+.room-image-outgoing.phase-scene-switch {
+  animation: scene-out 260ms ease-in forwards;
+}
+
+.room-image-outgoing.phase-arriving {
+  animation: scene-out 350ms ease-in forwards;
+}
+
+.transition-wash {
+  align-items: center;
+  animation: paw-wash 350ms ease-out both;
+  background: rgba(255, 239, 214, 0.58);
+  display: flex;
+  font-size: 56rpx;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.room-label,
+.room-desc {
+  background: rgba(255, 249, 238, 0.84);
+  border-radius: 12rpx;
+  display: table;
+  left: 24rpx;
+  padding: 6rpx 12rpx;
+  position: absolute;
+  z-index: 3;
+}
+
+.room-label {
+  color: #69432c;
+  font-size: 32rpx;
+  font-weight: 800;
+  top: 24rpx;
+}
+
+.room-desc {
+  color: #765540;
+  font-size: 24rpx;
+  line-height: 1.45;
+  max-width: 72%;
+  top: 82rpx;
+}
+
+.scene-feedback-card {
+  background: #fffaf2;
+  border: 2rpx solid rgba(218, 122, 75, 0.13);
+  border-radius: 22rpx;
+  box-shadow: 0 8rpx 20rpx rgba(83, 56, 38, 0.08);
+  box-sizing: border-box;
+  margin-top: 18rpx;
+  padding: 20rpx 24rpx;
+}
+
+.scene-feedback-card.cat-missing {
+  background: #f8f1eb;
+}
+
+.feedback-label {
+  color: #b06d47;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.feedback-text {
+  color: #684d3a;
+  font-size: 27rpx;
+  line-height: 1.55;
+  margin-top: 6rpx;
+}
+
+.action-card {
+  margin-top: 22rpx;
+}
+
+.action-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14rpx;
+  margin-top: 20rpx;
+}
+
+.action-chip {
+  background: #fff4ea;
+  border-radius: 999rpx;
+  color: #9b684c;
+  font-size: 25rpx;
+  padding: 16rpx 22rpx;
+}
+
+.action-chip.active {
+  background: #f6c6a8;
+  color: #874526;
+  font-weight: 700;
+}
+
+.reaction-button {
+  margin-top: 22rpx;
+}
+
+.memory-button {
+  margin: 20rpx 0 8rpx;
+}
+
+.disabled-button {
+  background: #dbcfc5 !important;
+  color: #9c8e82 !important;
+}
+
+.locked {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+@keyframes scene-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes reaction-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.018);
+  }
+}
+
+@keyframes scene-out {
+  from {
+    opacity: 1;
+    transform: scale(1.018);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes paw-wash {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}

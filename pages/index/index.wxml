@@ -1,0 +1,64 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-copy">
+      <view class="eyebrow">{{todayLabel}} · 本地 Demo</view>
+      <view class="hero-title">今天小猫怎么样？</view>
+      <view class="hero-text">先用几秒留下真实日常，再去小剧场陪它玩一会儿。</view>
+    </view>
+    <view class="cat-bubble">🐈</view>
+  </view>
+
+  <view class="card quick-card">
+    <view class="section-title">快速记录</view>
+    <view class="section-hint">猫砂、湿粮和一句观察，尽量在 30 秒内完成。</view>
+    <navigator class="primary-button quick-button" url="/pages/record/record" open-type="switchTab">记录今天</navigator>
+  </view>
+
+  <view class="section-row">
+    <view>
+      <view class="section-title">今日照护</view>
+      <view class="section-hint">记录是为了回看，不是为了制造压力。</view>
+    </view>
+    <view class="link" bindtap="goToCare">管理提醒 ›</view>
+  </view>
+
+  <view class="stats-grid">
+      <view class="card stat-card">
+        <view class="stat-emoji">💧</view>
+      <view class="stat-number stat-summary">{{record.urineText}}</view>
+      <view class="stat-label">尿团：大 / 中 / 小</view>
+    </view>
+      <view class="card stat-card">
+        <view class="stat-emoji">💩</view>
+      <view class="stat-number stat-summary">{{record.stoolText}}</view>
+      <view class="stat-label">屎团：大 / 中 / 小</view>
+    </view>
+    <view class="card food-card">
+      <view class="stat-emoji">🥣</view>
+      <view class="food-title">湿粮反馈</view>
+      <view class="food-text">{{record.foodText}}</view>
+      <view wx:if="{{record.foodDetail}}" class="food-detail">{{record.foodDetail}}</view>
+    </view>
+  </view>
+
+  <view class="care-list">
+    <view class="care-item" wx:for="{{careTasks}}" wx:key="id">
+      <view class="care-icon">{{item.icon}}</view>
+      <view class="care-copy">
+        <view class="care-name">{{item.name}}</view>
+        <view class="care-status">{{item.isDoneToday ? '今天已记录' : item.status}}</view>
+      </view>
+      <view class="care-done {{item.isDoneToday ? 'done' : ''}}" data-id="{{item.id}}" bindtap="markCareDone">
+        {{item.isDoneToday ? '完成' : '记录'}}
+      </view>
+    </view>
+  </view>
+
+  <view class="card play-card">
+    <view>
+      <view class="section-title">猫咪小剧场</view>
+      <view class="section-hint">窗边、沙发、纸箱：点一点，看它今天愿不愿意回应。</view>
+    </view>
+    <navigator class="ghost-button play-button" url="/pages/play/play" open-type="switchTab">进入小剧场</navigator>
+  </view>
+</view>

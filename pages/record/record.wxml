@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="intro">
+    <view class="eyebrow">{{todayLabel}}</view>
+    <view class="title">留下一条真实记录</view>
+    <view class="description">猫砂、湿粮和一句观察；每个尿团或屎团点一下就是一团。</view>
+  </view>
+
+  <view class="card record-card">
+    <view class="section-title">猫砂</view>
+    <view class="section-hint">大、中、小的标准由你自己按家里的实际情况判断。</view>
+
+    <view class="litter-block">
+      <view class="litter-heading"><text>💧</text> 尿团</view>
+      <view class="size-grid">
+        <view class="size-card large" data-group="urine" data-size="large" data-delta="1" bindtap="changeLitter"><view class="size-name">大尿团</view><view class="size-count">{{urine.large}}</view><view class="size-add">点一下 +1</view></view>
+        <view class="size-card medium" data-group="urine" data-size="medium" data-delta="1" bindtap="changeLitter"><view class="size-name">中尿团</view><view class="size-count">{{urine.medium}}</view><view class="size-add">点一下 +1</view></view>
+        <view class="size-card small" data-group="urine" data-size="small" data-delta="1" bindtap="changeLitter"><view class="size-name">小尿团</view><view class="size-count">{{urine.small}}</view><view class="size-add">点一下 +1</view></view>
+      </view>
+      <view class="undo-row"><text>误点？</text><view data-group="urine" data-size="large" data-delta="-1" bindtap="changeLitter">大 −1</view><view data-group="urine" data-size="medium" data-delta="-1" bindtap="changeLitter">中 −1</view><view data-group="urine" data-size="small" data-delta="-1" bindtap="changeLitter">小 −1</view></view>
+    </view>
+
+    <view class="litter-block stool-block">
+      <view class="litter-heading"><text>💩</text> 屎团</view>
+      <view class="size-grid">
+        <view class="size-card large" data-group="stool" data-size="large" data-delta="1" bindtap="changeLitter"><view class="size-name">大屎团</view><view class="size-count">{{stool.large}}</view><view class="size-add">点一下 +1</view></view>
+        <view class="size-card medium" data-group="stool" data-size="medium" data-delta="1" bindtap="changeLitter"><view class="size-name">中屎团</view><view class="size-count">{{stool.medium}}</view><view class="size-add">点一下 +1</view></view>
+        <view class="size-card small" data-group="stool" data-size="small" data-delta="1" bindtap="changeLitter"><view class="size-name">小屎团</view><view class="size-count">{{stool.small}}</view><view class="size-add">点一下 +1</view></view>
+      </view>
+      <view class="undo-row"><text>误点？</text><view data-group="stool" data-size="large" data-delta="-1" bindtap="changeLitter">大 −1</view><view data-group="stool" data-size="medium" data-delta="-1" bindtap="changeLitter">中 −1</view><view data-group="stool" data-size="small" data-delta="-1" bindtap="changeLitter">小 −1</view></view>
+    </view>
+  </view>
+
+  <view class="card record-card">
+    <view class="food-header"><view class="section-title">湿粮反馈</view><view class="food-library-link" bindtap="goToFoodLibrary">管理湿粮库 ›</view></view>
+    <view class="field-label">今天吃了什么？</view>
+    <picker mode="selector" range="{{foodLabels}}" value="{{foodIndex}}" bindchange="onFoodChange"><view class="picker-field">{{selectedFoodName}} <text>⌄</text></view></picker>
+    <view wx:if="{{selectedFoodDetail}}" class="food-meta">{{selectedFoodDetail}}</view>
+    <view class="field-label">本次食用状态</view>
+    <picker mode="selector" range="{{appetites}}" value="{{appetiteIndex}}" bindchange="onAppetiteChange"><view class="picker-field">{{selectedAppetite}} <text>⌄</text></view></picker>
+  </view>
+
+  <view class="card record-card">
+    <view class="section-title">一句观察</view>
+    <textarea class="note" maxlength="120" placeholder="例如：今天把鸡肉慕斯吃得很干净。" value="{{note}}" bindinput="onNoteInput" />
+  </view>
+
+  <view class="primary-button save-button" bindtap="saveRecord">保存今天的记录</view>
+</view>

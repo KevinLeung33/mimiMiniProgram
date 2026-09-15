@@ -1,0 +1,17 @@
+.intro { margin: 12rpx 8rpx 26rpx; }
+.eyebrow { color: #c46a42; font-size: 24rpx; }
+.title { color: #4f3829; font-size: 42rpx; font-weight: 800; margin-top: 10rpx; }
+.description { color: #9d8978; font-size: 24rpx; margin-top: 10rpx; }
+.field-label { color: #806a5a; font-size: 25rpx; margin-top: 22rpx; }
+.input-field, .picker-field { background: #fff7ef; border-radius: 16rpx; box-sizing: border-box; color: #5c4635; font-size: 27rpx; margin-top: 10rpx; min-height: 82rpx; padding: 20rpx; width: 100%; }
+.picker-field text { color: #bd7a58; float: right; }
+.add-button { margin-top: 28rpx; }
+.library-heading { margin: 38rpx 4rpx 18rpx; }
+.food-list { background: #fffdf9; border-radius: 24rpx; box-shadow: 0 10rpx 24rpx rgba(125, 92, 64, 0.07); overflow: hidden; }
+.food-item { align-items: center; border-bottom: 1rpx solid #f4e8df; display: flex; min-height: 106rpx; padding: 0 22rpx; }
+.food-item:last-child { border-bottom: none; }
+.food-dot { font-size: 35rpx; margin-right: 16rpx; }
+.food-copy { flex: 1; }
+.food-name { color: #5b4433; font-size: 27rpx; font-weight: 700; }
+.food-detail { color: #aa9586; font-size: 21rpx; margin-top: 5rpx; }
+.status-pill { background: #f8e4d2; border-radius: 999rpx; color: #a95e39; font-size: 21rpx; padding: 8rpx 13rpx; }
